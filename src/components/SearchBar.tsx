@@ -9,7 +9,8 @@ export default function SearchBar() {
   function handleSearch(e: any) {
     const { code, target } = e
     if (code === 'Enter' && !!target.value)
-      navigate(`/search?keyword=${target.value}`)
+      navigate(`/search`, { replace: true, state: { query: target.value } })
+
   }
   return <m.div
     className='no-drag-area'
