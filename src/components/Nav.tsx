@@ -39,7 +39,8 @@ function openedMixin(theme: Theme): CSSObject {
     }),
     overflowX: 'hidden',
     borderRight: 'none',
-    // background: theme.palette.surfaceVariant.main,
+    background: '#272a25',
+    color: "#fff"
   }
 }
 
@@ -53,7 +54,8 @@ function closedMixin(theme: Theme): CSSObject {
     overflowX: 'hidden',
     width: theme.spacing(9),
     borderRight: 'none',
-    // background: theme.palette.surface.main,
+    background: '#272a25',
+    color: "#fff"
   }
 }
 
@@ -83,14 +85,14 @@ export default function MiniDrawer() {
     {
       icon: <HomeIcon sx={{ height: 20, width: 20 }} />,
       val: 'home',
-      title: '主页',
+      title: 'New',
       to: '/workbench',
       pathname: ['/workbench', '/'],
     },
     {
       icon: <PublicIcon sx={{ height: 20, width: 20 }} />,
       val: 'rank',
-      title: '排行榜',
+      title: 'Nextjs',
       to: '/rank',
       pathname: ['/rank'],
     },
@@ -177,14 +179,14 @@ export default function MiniDrawer() {
                       minHeight: 40,
                       justifyContent: 'center',
                       alignItems: 'center',
-                      color: theme.palette.primary.main,
+                      color: '#fff',
                     }}
                   >
                     {item.icon}
                   </ListItemIcon>
                   <ListItemText
                     secondary={item.title}
-                    sx={{ opacity: open ? 1 : 0 }}
+                    sx={{ opacity: open ? 1 : 0, }}
                   />
                 </ListItemButton>
               </Link>

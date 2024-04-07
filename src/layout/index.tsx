@@ -36,6 +36,7 @@ export default function Layout({
       sx={{
         gridArea: 'main',
         overflowY: 'hidden',
+        height: '100vh',
         transition: theme.transitions.create('width', {
           easing: theme.transitions.easing.easeIn,
           duration: theme.transitions.duration.complex,
