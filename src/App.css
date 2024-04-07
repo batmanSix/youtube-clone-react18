@@ -1,1 +1,5 @@
 @import "./theme/base";
+
+:global(.react-player) {
+  width: 100% !important;
+}

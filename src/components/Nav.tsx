@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
 import type { CSSObject, Theme } from '@mui/material/styles'
 import { styled, useTheme } from '@mui/material/styles'
@@ -26,6 +27,7 @@ import MenuToggle from '@/components/MenuToggle'
 import { useAppStore } from '@/store/app'
 import AggregateExtendButton from '@/components/AggregateExtendButton'
 import useUser from '@/hooks/useUser'
+import { fetchFromAPI } from '@/http'
 
 const drawerWidth = 256
 
@@ -75,6 +77,9 @@ const Drawer = styled(MuiDrawer, {
 }))
 
 export default function MiniDrawer() {
+
+
+
   const theme = useTheme()
   const { rail: open } = useAppStore()
   const { logged } = useUser()

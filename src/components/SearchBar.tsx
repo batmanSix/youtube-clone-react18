@@ -1,6 +1,6 @@
 import { InputBase, Paper } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
 export default function SearchBar() {
@@ -11,7 +11,7 @@ export default function SearchBar() {
     if (code === 'Enter' && !!target.value)
       navigate(`/search?keyword=${target.value}`)
   }
-  return <motion.div
+  return <m.div
     className='no-drag-area'
     initial={{ opacity: 0 }}
     animate={{ opacity: 1, transition: { duration: 0.3 } }}
@@ -23,10 +23,10 @@ export default function SearchBar() {
       <InputBase
         autoFocus
         sx={{ ml: 2, flex: 1, fontSize: 14 }}
-        placeholder="Search Anything"
+        placeholder="搜索"
         inputProps={{ 'aria-label': 'search anything' }}
         onKeyDown={handleSearch}
       />
     </Paper>
-  </motion.div>
+  </m.div>
 }
