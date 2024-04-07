@@ -50,7 +50,7 @@ export default function AggregateExtendButton() {
         onClick={() => needBack ? back() : reload()}
       >
         {
-          needBack ? <ArrowBackIcon /> : <ReloadIcon color={'onPrimaryContainer' as 'primary'} />
+          needBack ? <ArrowBackIcon /> : <ReloadIcon color='inherit' />
         }
       </Button>
     </div>

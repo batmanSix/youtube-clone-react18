@@ -1,11 +1,11 @@
 import Box from '@mui/material/Box'
 import { useTheme } from '@mui/material/styles'
-// import SearchBar from '../pages/layout/SearchBar'
-// import Account from '../components/Account'
-import { useAppStore } from '../store/app'
-import SearchToggle from '../components/SearchToggle'
-import NavigateButton from '../components/NavigateButton'
-// import SearchBar from './SearchBar'
+import SearchBar from '@/components/SearchBar'
+// import Account from '@/components/Account'
+import { useAppStore } from '@/store/app'
+import SearchToggle from '@/components/SearchToggle'
+import NavigateButton from '@/components/NavigateButton'
+import DarkModeToggle from './DarkModeToggle'
 
 export default function Header() {
   const theme = useTheme()
@@ -29,11 +29,11 @@ export default function Header() {
     }}>
       <NavigateButton />
       {
-        showSearch && <div>2</div>
+        showSearch && <SearchBar />
       }
       <div className='flex-auto'></div>
       <SearchToggle />
-      {/* <DarkModeToggle /> */}
+      <DarkModeToggle />
       {/* <Account /> */}
     </Box>
     <Box sx={{
@@ -43,7 +43,7 @@ export default function Header() {
       bottom: 0,
       left: 0,
       transition: 'background-color,opacity .25s',
-      // bgcolor: theme.palette.surface.main,
+      bgcolor: theme.palette.surface.main,
       opacity: 'var(--top-bar-opacity, 0)',
       zIndex: -1,
     }}></Box>

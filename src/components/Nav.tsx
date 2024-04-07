@@ -39,8 +39,7 @@ function openedMixin(theme: Theme): CSSObject {
     }),
     overflowX: 'hidden',
     borderRight: 'none',
-    background: '#272a25',
-    color: "#fff"
+    background: theme.palette.surfaceVariant.main,
   }
 }
 
@@ -54,8 +53,7 @@ function closedMixin(theme: Theme): CSSObject {
     overflowX: 'hidden',
     width: theme.spacing(9),
     borderRight: 'none',
-    background: '#272a25',
-    color: "#fff"
+    background: theme.palette.surface.main,
   }
 }
 
@@ -84,32 +82,32 @@ export default function MiniDrawer() {
   const list = [
     {
       icon: <HomeIcon sx={{ height: 20, width: 20 }} />,
-      val: 'home',
-      title: 'New',
+      val: 'workbench',
+      title: '主页',
       to: '/workbench',
       pathname: ['/workbench', '/'],
     },
     {
       icon: <PublicIcon sx={{ height: 20, width: 20 }} />,
-      val: 'rank',
-      title: 'Nextjs',
-      to: '/rank',
-      pathname: ['/rank'],
+      val: 'explore',
+      title: '浏览',
+      to: '/explore',
+      pathname: ['/explore'],
     },
     {
       icon: <PodcastsIcon sx={{ height: 20, width: 20 }} />,
-      val: 'song',
-      title: '歌单',
-      to: '/song',
-      pathname: ['/song'],
+      val: 'podcast_center',
+      title: '播客',
+      to: '/podcast_center',
+      pathname: ['/podcast_center'],
     },
     ...(logged
       ? [{
         icon: <CategoryIcon sx={{ height: 20, width: 20 }} />,
-        val: 'mv',
-        title: 'MV',
-        to: '/mv',
-        pathname: ['/mv'],
+        val: 'library',
+        title: '资料库',
+        to: '/library',
+        pathname: ['/library'],
       }]
       : []),
     {
@@ -122,7 +120,7 @@ export default function MiniDrawer() {
   ]
 
   return (
-    <Drawer variant="permanent" open={open} className="drag-area relative z-30" sx={{
+    <Drawer variant="permanent" open={open} className="drag-area" sx={{
       gridArea: 'left-nav',
     }}>
       <Box sx={{ mt: 2.65, mx: 2.2, mb: 2.75 }}>
@@ -155,6 +153,40 @@ export default function MiniDrawer() {
             transition: 'flex 350ms cubic-bezier(0.55, -0.01, 0, 1.03)',
           }}
         >
+          {/* <ListItem */}
+          {/*  disablePadding */}
+          {/*  sx={{ display: 'block', mb: 0.5 }} */}
+          {/*  className="no-drag-area" */}
+          {/*  onClick={() => { */}
+          {/*    toggleSearch() */}
+          {/*  }} */}
+          {/* > */}
+          {/*  <ListItemButton */}
+          {/*    selected={showSearch } */}
+          {/*    sx={{ */}
+          {/*      borderRadius: 14, */}
+          {/*      minHeight: 56, */}
+          {/*      justifyContent: open ? 'initial' : 'center', */}
+          {/*      px: 1, */}
+          {/*    }} */}
+          {/*  > */}
+          {/*    <ListItemIcon */}
+          {/*      sx={{ */}
+          {/*        minWidth: 40, */}
+          {/*        minHeight: 40, */}
+          {/*        justifyContent: 'center', */}
+          {/*        alignItems: 'center', */}
+          {/*        color: theme.palette.primary.main, */}
+          {/*      }} */}
+          {/*    > */}
+          {/*      <SearchIcon sx={{ height: 20, width: 20 }} /> */}
+          {/*    </ListItemIcon> */}
+          {/*    <ListItemText */}
+          {/*      secondary='搜索' */}
+          {/*      sx={{ opacity: open ? 1 : 0 }} */}
+          {/*    /> */}
+          {/*  </ListItemButton> */}
+          {/* </ListItem> */}
           {list.map((item, index) => (
             <ListItem
               key={item.val}
@@ -179,14 +211,14 @@ export default function MiniDrawer() {
                       minHeight: 40,
                       justifyContent: 'center',
                       alignItems: 'center',
-                      color: '#fff',
+                      color: theme.palette.primary.main,
                     }}
                   >
                     {item.icon}
                   </ListItemIcon>
                   <ListItemText
                     secondary={item.title}
-                    sx={{ opacity: open ? 1 : 0, }}
+                    sx={{ opacity: open ? 1 : 0 }}
                   />
                 </ListItemButton>
               </Link>

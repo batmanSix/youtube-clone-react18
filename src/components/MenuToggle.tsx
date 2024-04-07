@@ -5,7 +5,7 @@ import { useAppStore } from '@/store/app'
 
 export default function MenuToggle() {
   const { rail, toggleRail } = useAppStore()
-  return <IconButton color="primary" className="no-drag-area" onClick={toggleRail} sx={{
+  return <IconButton color="inherit" className="no-drag-area" onClick={toggleRail} sx={{
     height: 36,
     width: 36,
   }}>
