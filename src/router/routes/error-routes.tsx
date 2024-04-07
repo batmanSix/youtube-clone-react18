@@ -6,9 +6,9 @@ import { Outlet } from 'react-router-dom';
 
 import { AppRouteObject } from '../utils';
 
-// const Page403 = lazy(() => import('@/pages/sys/error/Page403'));
-// const Page404 = lazy(() => import('@/pages/sys/error/Page404'));
-// const Page500 = lazy(() => import('@/pages/sys/error/Page500'));
+const Page403 = lazy(() => import('@/pages/sys/error/Page403'));
+const Page404 = lazy(() => import('@/pages/sys/error/Page404'));
+const Page500 = lazy(() => import('@/pages/sys/error/Page500'));
 
 /**
  * error routes
@@ -23,8 +23,8 @@ export const ErrorRoutes: AppRouteObject = {
 
   ),
   children: [
-    // { path: '403', element: <Page403 /> },
-    // { path: '404', element: <Page404 /> },
-    // { path: '500', element: <Page500 /> },
+    { path: '403', element: <Page403 /> },
+    { path: '404', element: <Page404 /> },
+    { path: '500', element: <Page500 /> },
   ],
 };
